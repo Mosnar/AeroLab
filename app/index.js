@@ -1,18 +1,31 @@
-import React, { Component } from 'react';
-import { AppRegistry, Text } from 'react-native';
+import React, {Component} from 'react';
+import {
+  Router,
+  Scene,
+  Actions,
+} from 'react-native-router-flux';
 
-import {Scene, Router} from 'react-native-router-flux';
+import {connect, Provider} from 'react-redux';
+import store from './config/store';
+
+import Home from './routes/Home';
+
+const RouterWithRedux = connect()(Router);
+
+const scenes = Actions.create(
+  <Scene key="root">
+    <Scene key="home" component={Home} title="Home" />
+  </Scene>
+);
 
 class AeroLab extends Component {
-    render() {
-        return (
-            <Router>
-                <Scene key="root">
-                    <Scene key="home" component={}
-                </Scene>
-            </Router>
-        );
-    }
+  render() {
+    return (
+      <Provider store={store}>
+        <RouterWithRedux scenes={scenes}/>
+      </Provider>
+    );
+  }
 }
 
 module.exports = AeroLab;
