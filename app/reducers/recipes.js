@@ -23,7 +23,7 @@ export default function reducer(state = initialState, action) {
                 load: {
                     fetching: false
                 },
-                data: action.response,
+                data: action.response.data,
                 hashCode: action.hashCode
             });
         case t.GET_RECIPES_FAILURE:

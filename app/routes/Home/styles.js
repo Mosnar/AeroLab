@@ -1,18 +1,30 @@
-import { StyleSheet } from 'react-native';
-import { colors } from '../../config/styles';
+import {StyleSheet} from 'react-native';
+import {colors} from '../../config/styles';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: colors.background,
-  },
-  main: {
-    fontSize: 20,
-    textAlign: 'center',
-    color: colors.headerText,
-    fontWeight: '400',
-    fontStyle: 'italic',
-  },
+    noRecipes: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+        padding: 10
+    },
+    container: {
+        backgroundColor: '#F5FCFF',
+        padding: 10,
+        paddingLeft: 10,
+        paddingRight: 10
+    },
+    title: {
+        fontSize: 15,
+        marginBottom: 8
+    },
+    separator: {
+        height: 1,
+        backgroundColor: '#dddddd'
+    },
+    author: {
+        color: '#656565'
+    }
 });

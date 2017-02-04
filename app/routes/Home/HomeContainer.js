@@ -18,15 +18,12 @@ class HomeContainer extends Component {
 
     componentWillMount() {
         let promise = this.props.getRecipes();
-        promise.then(function () {
-            console.log('hey');
-        }.bind(this));
     }
 
 
     render() {
         return (
-            <Home />
+            <Home recipes={this.props.recipes} />
         );
     }
 }
@@ -36,7 +33,7 @@ HomeContainer.propTypes = {};
 
 function mapStateToProps(state) {
     return {
-        recipes: state,
+        recipes: state.recipes,
     };
 }
 const actions = {

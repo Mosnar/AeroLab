@@ -14,7 +14,7 @@ const RouterWithRedux = connect()(Router);
 
 const scenes = Actions.create(
     <Scene key="root">
-        <Scene key="home" component={HomeContainer} title="Home"/>
+        <Scene key="home" component={HomeContainer} hideNavBar={true} title="Home"/>
     </Scene>
 );
 
