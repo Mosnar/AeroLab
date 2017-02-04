@@ -8,13 +8,13 @@ import {
 import {connect, Provider} from 'react-redux';
 import store from './config/store';
 
-import Home from './routes/Home';
+import HomeContainer from './routes/Home';
 
 const RouterWithRedux = connect()(Router);
 
 const scenes = Actions.create(
     <Scene key="root">
-        <Scene key="home" component={Home} title="Home"/>
+        <Scene key="home" component={HomeContainer} title="Home"/>
     </Scene>
 );
 

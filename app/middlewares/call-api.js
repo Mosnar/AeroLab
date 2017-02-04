@@ -24,17 +24,17 @@ export default store => next => action => {
 
     let promise = fetch(remote.API_URL + path, opt);
 
-    promise.then(function (res) {
+    promise.then((response) => response.json()).then(function (res) {
         let respObj = {
             type: successType,
-            response: res.body
+            response: res
         };
         if (extra != null) {
             respObj.extra = extra;
         }
         dispatch(respObj);
         if (success) {
-            success(res.body);
+            success(res);
         }
     }, function (err) {
         let respObj = {

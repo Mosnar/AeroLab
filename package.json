@@ -14,7 +14,8 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.8.0",
     "redux-persist": "^4.1.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "lodash": "latest"
   },
   "devDependencies": {
     "babel-jest": "18.0.0",
