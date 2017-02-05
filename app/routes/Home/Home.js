@@ -2,6 +2,8 @@ import React, {
     Component,
 } from 'react';
 
+import RecipeListItem from '../../components/RecipeListItem';
+
 import {Text, View, ListView, TouchableHighlight} from 'react-native';
 import styles from './styles';
 
@@ -27,17 +29,7 @@ class Home extends Component {
 
     _renderRecipe(recipe) {
         return (
-            <TouchableHighlight key={recipe.id} onPress={() => console.warn('noop')} underlayColor='#dddddd'>
-                <View>
-                    <View style={styles.container}>
-                        <View style={styles.rightContainer}>
-                            <Text style={styles.title}>{recipe.title}</Text>
-                            <Text style={styles.author}>{recipe.author}</Text>
-                        </View>
-                    </View>
-                    <View style={styles.separator}/>
-                </View>
-            </TouchableHighlight>
+            <RecipeListItem recipe={recipe}/>
         );
     }
 
@@ -46,6 +38,8 @@ class Home extends Component {
         return (
             <View style={styles.container}>
                 <ListView
+                    contentInset={{bottom:49}}
+                    automaticallyAdjustContentInsets={false}
                     withSections={false}
                     dataSource={this.state.dataSource}
                     enableEmptySections={true}

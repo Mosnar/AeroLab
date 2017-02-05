@@ -29,7 +29,9 @@ class HomeContainer extends Component {
 }
 
 
-HomeContainer.propTypes = {};
+HomeContainer.propTypes = {
+
+};
 
 function mapStateToProps(state) {
     return {
