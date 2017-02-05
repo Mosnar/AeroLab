@@ -8,13 +8,13 @@ import {
 import {connect, Provider} from 'react-redux';
 import store from './config/store';
 
-import HomeContainer from './routes/Home';
+import FeaturedContainer from './routes/Featured';
 
 const RouterWithRedux = connect()(Router);
 
 const scenes = Actions.create(
     <Scene key="root">
-        <Scene key="home" component={HomeContainer} hideNavBar={true} title="Home"/>
+        <Scene key="featured" component={FeaturedContainer} hideNavBar={true}/>
     </Scene>
 );
 

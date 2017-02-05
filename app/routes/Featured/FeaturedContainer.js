@@ -4,34 +4,33 @@ import React, {
 
 import {connect} from 'react-redux';
 
-import Home from './Home';
+import Featured from './Featured';
 
 import {
     getRecipes
 } from '../../actions/recipes';
 
 
-class HomeContainer extends Component {
+class FeaturedContainer extends Component {
     constructor(props) {
         super(props);
     }
 
     componentWillMount() {
-        let promise = this.props.getRecipes();
+        this.props.getRecipes();
     }
 
 
     render() {
-        return (
-            <Home recipes={this.props.recipes} />
+        let featured = (
+            <Featured recipes={this.props.recipes}/>
         );
+        return featured;
     }
 }
 
 
-HomeContainer.propTypes = {
-
-};
+FeaturedContainer.propTypes = {};
 
 function mapStateToProps(state) {
     return {
@@ -42,4 +41,4 @@ const actions = {
     getRecipes
 };
 
-export default connect(mapStateToProps, actions)(HomeContainer);
+export default connect(mapStateToProps, actions)(FeaturedContainer);

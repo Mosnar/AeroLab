@@ -3,11 +3,12 @@ import React, {
 } from 'react';
 
 import RecipeListItem from '../../components/RecipeListItem';
+import Loader from '../../components/Loader';
 
 import {Text, View, ListView, TouchableHighlight} from 'react-native';
 import styles from './styles';
 
-class Home extends Component {
+class Featured extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -35,20 +36,27 @@ class Home extends Component {
 
 
     render() {
+        let loading = !!this.props.recipes.load.fetching;
+        let listView = (<ListView
+            contentInset={{bottom:49}}
+            automaticallyAdjustContentInsets={false}
+            withSections={false}
+            dataSource={this.state.dataSource}
+            enableEmptySections={true}
+            renderRow={this._renderRecipe.bind(this)}
+        />);
+
+        let loader = (
+            <Loader />
+        );
+        let content = loading ? loader : listView;
         return (
             <View style={styles.container}>
-                <ListView
-                    contentInset={{bottom:49}}
-                    automaticallyAdjustContentInsets={false}
-                    withSections={false}
-                    dataSource={this.state.dataSource}
-                    enableEmptySections={true}
-                    renderRow={this._renderRecipe.bind(this)}
-                />
+                {content}
             </View>
         );
     }
 
 }
 
-export default Home;
+export default Featured;
