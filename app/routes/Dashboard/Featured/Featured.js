@@ -2,8 +2,8 @@ import React, {
     Component,
 } from 'react';
 
-import RecipeListItem from '../../components/RecipeListItem';
-import Loader from '../../components/Loader';
+import RecipeListItem from '../../../components/RecipeListItem';
+import Loader from '../../../components/Loader';
 
 import {Text, View, ListView, TouchableHighlight} from 'react-native';
 import styles from './styles';

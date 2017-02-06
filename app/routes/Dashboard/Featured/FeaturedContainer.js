@@ -8,7 +8,7 @@ import Featured from './Featured';
 
 import {
     getRecipes
-} from '../../actions/recipes';
+} from '../../../actions/recipes';
 
 
 class FeaturedContainer extends Component {
